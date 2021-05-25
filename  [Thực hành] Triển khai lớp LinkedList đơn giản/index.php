@@ -12,7 +12,6 @@ $linkedList->delete(1);
 $linkedList->add(1, 55);
 $totalNodes = $linkedList->totalNodes();
 $linkData = $linkedList->readList();
-
 echo $totalNodes;
 echo "<br>";
 echo implode('-', $linkData);
