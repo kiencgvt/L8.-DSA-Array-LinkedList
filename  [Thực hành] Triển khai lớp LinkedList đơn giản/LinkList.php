@@ -26,6 +26,7 @@ class LinkList
 
         $this->count++;
     }
+
     public function insertLast($data): void
     {
         $lastNode = $this->lastNode;
@@ -40,6 +41,38 @@ class LinkList
 
         $this->count++;
     }
+
+    public function delete($index)
+    {
+        if ($index != 1) {
+            $currentNode = $this->firstNode;
+            for ($i = 1; $i < $index - 1; $i++) {
+                $currentNode = $currentNode->next;
+            }
+            $currentNode->next = $currentNode->next->next;
+        } else {
+            $this->firstNode = $this->firstNode->next;
+        }
+        $this->count--;
+    }
+
+    public function add($index, $data)
+    {
+        $newNode = new Node($data);
+        if ($index != 1) {
+            $currentNode = $this->firstNode;
+            for ($i = 1; $i < $index - 1; $i++) {
+                $currentNode = $currentNode->next;
+            }
+            $newNode->next = $currentNode->next;
+            $currentNode->next = $newNode;
+        } else {
+            $newNode->next = $this->firstNode;
+            $this->firstNode = $newNode;
+        }
+        $this->count--;
+    }
+
     public function totalNodes(): int
     {
         return $this->count;

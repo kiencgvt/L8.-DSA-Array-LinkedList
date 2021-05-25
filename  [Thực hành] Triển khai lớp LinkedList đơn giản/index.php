@@ -8,6 +8,8 @@ $linkedList->insertFirst(11);
 $linkedList->insertFirst(22);
 $linkedList->insertLast(33);
 $linkedList->insertLast(44);
+$linkedList->delete(1);
+$linkedList->add(1, 55);
 $totalNodes = $linkedList->totalNodes();
 $linkData = $linkedList->readList();
 
