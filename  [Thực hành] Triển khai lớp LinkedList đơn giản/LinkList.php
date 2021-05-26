@@ -59,9 +59,9 @@ class LinkList
     public function add($index, $data)
     {
         $newNode = new Node($data);
-        if ($index != 1) {
+        if ($index != 0) {
             $currentNode = $this->firstNode;
-            for ($i = 1; $i < $index - 1; $i++) {
+            for ($i = 0; $i < $index - 1; $i++) {
                 $currentNode = $currentNode->next;
             }
             $newNode->next = $currentNode->next;
@@ -70,7 +70,7 @@ class LinkList
             $newNode->next = $this->firstNode;
             $this->firstNode = $newNode;
         }
-        $this->count--;
+        $this->count++;
     }
 
     public function totalNodes(): int
